@@ -14,7 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    'scraping_api_url' => env('SCRAPING_API_URL', 'http://ssekimuli-andrew.test/api/scrape'),
+    // 'scraping_api_url' => env('SCRAPING_API_URL', 'http://ssekimuli-andrew.test/api/scrape'),
+    'scraping_api_url' => env('SCRAPING_API_URL', 'https://fakestoreapi.com/users'),
 
     /*
     |--------------------------------------------------------------------------

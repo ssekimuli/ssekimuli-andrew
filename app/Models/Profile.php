@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Scout\Searchable;
 
 class Profile extends Model
 {
-    use Searchable;
+    use HasFactory, Searchable;
 
     public function searchableAs()
     {
@@ -24,5 +25,10 @@ class Profile extends Model
             'name' => $this->name,
             'bio' => $this->bio,
         ];
+    }
+
+    public function snapshots()
+    {
+        return $this->hasMany(ProfileSnapshot::class);
     }
 }

@@ -19,10 +19,9 @@ class ProfileController extends Controller
 
     public function scrape($username)
     {
-        // return response()->json(['message' => "Scraping profile: $username"]);
         $scraper = new ScraperService();
         try {
-           return $data = $scraper->fetchProfileData($username);
+           $data = $scraper->fetchProfileData($username=1);
             return response()->json($data);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Failed to scrape profile: ' . $e->getMessage()], 500); 

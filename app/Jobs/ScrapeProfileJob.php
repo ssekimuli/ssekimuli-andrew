@@ -25,14 +25,22 @@ class ScrapeProfileJob implements ShouldQueue
     {
      $data = $scraper->fetchProfileData($this->username);
 
-        Profile::updateOrCreate(
+        $profile = Profile::updateOrCreate(
             ['username' => $this->username],
             [
-                'name' => $data['name'],
-                'bio' => $data['bio'],
-                'likes_count' => $data['likes']?? 0,
+                'name' =>  $data['username'] ?? $this->username,
+                'bio' => $data['username'].' - '.$data['email'].' - '.$data['phone'] ?? '',
+                'likes_count' => (int) ($data['__v'] ?? 0),
                 'last_scraped_at' => now(),
             ]
         );
+
+
+        // $profile->snapshots()->create([
+        //     'name' => $data['name'],
+        //     'bio' => $data['bio'],
+        //     'likes_count' => $data['likes'] ?? 0,
+        //     'raw_data' => $data['raw'] ?? [],
+        // ]);
     }
 }
