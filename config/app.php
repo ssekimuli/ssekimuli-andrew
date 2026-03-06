@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'scraping_api_url' => env('SCRAPING_API_URL', 'http://ssekimuli-andrew.test/api/scrape'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://ssekimuli-andrew.test'),
 
     /*
     |--------------------------------------------------------------------------
