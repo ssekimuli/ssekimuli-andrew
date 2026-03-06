@@ -38,6 +38,8 @@ class ScraperService
         'name'  => $data['username'] ?? $username,
         'bio'   => $data['username'].' - '.$data['email'].' - '.$data['phone'] ?? '', 
         'likes' => (int) ($data['__v'] ?? 0),
+        'email' => $data['email'],
+        'phone' => $data['phone'],
         // 'raw'   => $data,
     ];
 }
