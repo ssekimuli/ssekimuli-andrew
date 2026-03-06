@@ -13,7 +13,7 @@ class ScrapeProfileJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(public string $username)
+    public function __construct(public $username)
     {
         //
     }
