@@ -28,8 +28,8 @@ class ScrapeProfileJob implements ShouldQueue
         $profile = Profile::updateOrCreate(
             ['username' => $this->username],
             [
-                'name' =>  $data['username'] ?? $this->username,
-                'bio' => $data['username'].' - '.$data['email'].' - '.$data['phone'] ?? '',
+                'name' =>  $data['name'] ?? $this->username,
+                'bio' => $data['name'].' - '.$data['email'].' - '.$data['phone'] ?? '',
                 'likes_count' => (int) ($data['__v'] ?? 0),
                 'last_scraped_at' => now(),
             ]
