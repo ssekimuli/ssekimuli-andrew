@@ -10,6 +10,19 @@ class Profile extends Model
 {
     use HasFactory, Searchable;
 
+    protected $fillable = [
+        'username',
+        'name',
+        'bio',
+        'likes_count',
+        'last_scraped_at',
+    ];
+
+    protected $casts = [
+        'last_scraped_at' => 'datetime',
+    ];
+
+
     public function searchableAs()
     {
         return 'profiles_index';
