@@ -15,6 +15,7 @@ class ProfileController extends Controller
     $results = Profile::search($query)->paginate(20);
 
     return response()->json($results);
+    
 }
 
     public function scrape($username)
