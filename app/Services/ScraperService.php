@@ -11,7 +11,7 @@ class ScraperService
     /**
      * Scrape profile data from the internal API.
      */
-   public function fetchProfileData(string $username): array
+   public function fetchProfileData(string $username=1): array
 {
     // $url = config('app.scraping_api_url') . "/users/{$username}";
     $url = config('app.scraping_api_url') . "/{$username}";
