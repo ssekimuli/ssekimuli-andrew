@@ -18,7 +18,7 @@ Schedule::call(function () {
             ScrapeProfileJob::dispatch($profile->username);
         }
     });
-})->everySecond();
+})->daily();
 
 //Standard profiles every 72 hours
 Schedule::call(function () {
